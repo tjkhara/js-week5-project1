@@ -8,6 +8,9 @@ $(document).ready(function() {
   {name: "Jalapeno", status: "complete", price: ".15", quantity: 2}
   ];
 
+  debugger;
+  console.log(groceries);
+
 // Comment for first commit
 // Before we start anything, string up the css file, this javascript file, and
 // the jQuery CDN to grocery.html file.
