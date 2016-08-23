@@ -50,6 +50,15 @@ $(document).ready(function() {
   renderGroceries();
   printTotalCost();
 
+  function checkFields() {
+    if ( $("#addItem").val() === "" || $("#addPrice").val() === "" || $("#addQuantity").val() === "") {
+      alert("Please input a product name, price, and quantity.");
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   function clearGroceries() {
     $("#list li").remove();
   }
@@ -62,6 +71,7 @@ $(document).ready(function() {
     // var itemQuantity = $("#addQuantity").val();
 
     function addGroceryToArray() {
+
       groceries.unshift(
 
           {
@@ -78,11 +88,15 @@ $(document).ready(function() {
       function() {
 
 
+        if(checkFields()) {
         addGroceryToArray();
         clearGroceries();
         renderGroceries();
         removeTotalCost();
         printTotalCost();
+      } else {
+        console.log("Something's wrong!");
+      }
 
 
       }
@@ -104,6 +118,7 @@ $(document).ready(function() {
 
 
     //4. Put a check in to make sure users aren't adding items without a name, price, or quantity.
+
 
 
 
